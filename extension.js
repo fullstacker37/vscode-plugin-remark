@@ -12,23 +12,25 @@ function activate(context) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "remark-name" is now active!');
+	console.log('祝贺, 您的插件现在已经被激活!');
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('remark-name.helloWorld', function () {
+	let disposable = vscode.commands.registerCommand('remark-name.remark', function () {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from remark-name!');
+		vscode.window.showInformationMessage('可以开启您的文件(夹)备注之旅了!');
 	});
 
 	context.subscriptions.push(disposable);
 }
 
 // this method is called when your extension is deactivated
-function deactivate() {}
+function deactivate() {
+	console.log('您的插件 vscode-plugin-remark 已被释放');
+}
 
 module.exports = {
 	activate,

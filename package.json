@@ -10,16 +10,33 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:remark-name.helloWorld"
+		"onCommand:remark-name.remark"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "remark-name.helloWorld",
+				"command": "remark-name.remark",
 				"title": "Hello World"
 			}
-		]
+		],
+		"keybindings": [
+			{
+				"command": "remark-name.remark",
+				"key": "ctrl+t",
+				"mac": "cmd+t",
+				"when": "editorTextFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "remark-name.remark",
+					"group": "navigation"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"lint": "eslint .",
