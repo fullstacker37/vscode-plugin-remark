@@ -10,29 +10,42 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:remark-name.remark"
+		"onCommand:extension.remark"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "remark-name.remark",
-				"title": "Hello World"
+				"command": "extension.remark",
+				"title": "添加备注"
 			}
 		],
 		"keybindings": [
 			{
-				"command": "remark-name.remark",
+				"command": "extension.remark",
 				"key": "ctrl+t",
 				"mac": "cmd+t",
 				"when": "editorTextFocus"
 			}
 		],
 		"menus": {
+			"commandPalette": [
+				{
+					"command": "extension.remark",
+					"when": "false"
+				}
+			],
+			"explorer/context": [
+				{
+					"when": "filesExplorerFocus",
+					"command": "extension.remark",
+					"group": "navigation"
+				}
+			],
 			"editor/context": [
 				{
 					"when": "editorFocus",
-					"command": "remark-name.remark",
+					"command": "extension.remark",
 					"group": "navigation"
 				}
 			]
